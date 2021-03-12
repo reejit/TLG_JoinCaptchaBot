@@ -52,8 +52,8 @@ FROM builder-deps AS builder
 # Build the code as unprivileged user
 USER ${BOT_USER}
 WORKDIR ${BOT_HOME_DIR}
-RUN git clone ${GITHUB_URL} ${APP_DIR} && \
-    python3 -m pip install --user --requirement ${APP_DIR}/requirements.txt && \
+RUN git clone https://github.com/reejit/TLG_JoinCaptchaBot && \
+    python3 -m pip install --user --requirement requirements.txt && \
     cd ${APP_DIR}/sources && \
     chown -cR ${BOT_USER}:${BOT_GROUP} ${BOT_HOME_DIR} && \
     rm -rf ${BOT_HOME_DIR}/.cache && \
@@ -72,7 +72,6 @@ COPY --from=builder ${BOT_HOME_DIR} ${BOT_HOME_DIR}
 # Adjust privileges
 RUN chown -R "${BOT_USER}:${BOT_GROUP}" ${BOT_HOME_DIR} && \
     usermod -d ${BOT_HOME_DIR} ${BOT_USER}
-RUN pip3 install --no-cache-dir -r requirements.txt
 # Set up to run as an unprivileged user
 USER ${BOT_USER}
 WORKDIR ${APP_DIR}/sources
