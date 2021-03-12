@@ -15,13 +15,13 @@ SETTINGS = {
     # Public: can be used by any group
     # Private: just can be used in allowed groups (Bot owner allow them
     # with /allow_group command)
-    "CAPTCHABOT_PRIVATE": False,
+    "CAPTCHABOT_PRIVATE": True,
 
     # Bot Token (get it from @BotFather)
-    "CAPTCHABOT_TOKEN": "XXXXXXXXX:XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+    "CAPTCHABOT_TOKEN": "1370150385:AAH36xDrK0aMeoIrDvfFQ6lAVUKzuVETWPE",
 
     # Bot Owner (i.e. "@JoseTLG" or "123456789")
-    "CAPTCHABOT_OWNER": "XXXXXXXXX",
+    "CAPTCHABOT_OWNER": "1229057875",
 
     # Bot Webhook Host addres (keep in None for Polling or set to a
     # valid address for Webhook)
