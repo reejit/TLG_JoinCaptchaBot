@@ -72,7 +72,7 @@ COPY --from=builder ${BOT_HOME_DIR} ${BOT_HOME_DIR}
 # Adjust privileges
 RUN chown -R "${BOT_USER}:${BOT_GROUP}" ${BOT_HOME_DIR} && \
     usermod -d ${BOT_HOME_DIR} ${BOT_USER}
-
+RUN pip3 install --no-cache-dir -r requirements.txt
 # Set up to run as an unprivileged user
 USER ${BOT_USER}
 WORKDIR ${APP_DIR}/sources
