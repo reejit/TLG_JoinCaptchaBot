@@ -53,7 +53,9 @@ FROM builder-deps AS builder
 USER ${BOT_USER}
 WORKDIR ${BOT_HOME_DIR}
 RUN git clone https://github.com/reejit/TLG_JoinCaptchaBot && \
-    python3 -m pip install --user --requirement requirements.txt && \
+    pip3 install python_telegram_bot==11.1.0 && \
+    pip3 install Pillow==6.0.0 && \
+    pip3 install multicolourcaptcha==1.0.0 && \
     cd ${APP_DIR}/sources && \
     chown -cR ${BOT_USER}:${BOT_GROUP} ${BOT_HOME_DIR} && \
     rm -rf ${BOT_HOME_DIR}/.cache && \
